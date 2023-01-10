@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <?php
         $hotels = [
@@ -67,9 +68,9 @@
                     echo "<tr>";
                     echo "<td>" . $name . "</td>";
                     echo "<td>" . $description . "</td>";
-                    echo "<td>" . $parking . "</td>";
-                    echo "<td>" . $vote . "</td>";
-                    echo "<td>" . $distance . "</td>";
+                    echo $parking ===  true ? "<td>" . "YES" . "</td>" : "<td>" . "NO" . "</td>";
+                    echo "<td>" . $vote . "/5" . "</td>";
+                    echo "<td>" . $distance . " km" . "</td>";
                     echo "</tr>";
                 }
             ?>
