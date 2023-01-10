@@ -46,35 +46,37 @@
         ];
     ?>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Parking</th>
-                <th>Vote</th>
-                <th>Distance To Center</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                foreach($hotels as $hotel) {
-                    $name = $hotel["name"];
-                    $description = $hotel["description"];
-                    $parking = $hotel["parking"];
-                    $vote = $hotel["vote"];
-                    $distance = $hotel["distance_to_center"];
-                    
-                    echo "<tr>";
-                    echo "<td>" . $name . "</td>";
-                    echo "<td>" . $description . "</td>";
-                    echo $parking ===  true ? "<td>" . "YES" . "</td>" : "<td>" . "NO" . "</td>";
-                    echo "<td>" . $vote . "/5" . "</td>";
-                    echo "<td>" . $distance . " km" . "</td>";
-                    echo "</tr>";
-                }
-            ?>
-        </tbody>
-    </table>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Parking</th>
+                    <th>Vote</th>
+                    <th>Distance To Center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach($hotels as $hotel) {
+                        $name = $hotel["name"];
+                        $description = $hotel["description"];
+                        $parking = $hotel["parking"];
+                        $vote = $hotel["vote"];
+                        $distance = $hotel["distance_to_center"];
+                        
+                        echo "<tr>";
+                        echo "<td>" . $name . "</td>";
+                        echo "<td>" . $description . "</td>";
+                        echo $parking ===  true ? "<td class=green>" . "YES" . "</td>" : "<td class=red>" . "NO" . "</td>";
+                        echo "<td>" . $vote . "/5" . "</td>";
+                        echo "<td>" . $distance . " km" . "</td>";
+                        echo "</tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
